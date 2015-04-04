@@ -21,7 +21,7 @@ var stuff = [
   ['WatchBoard', 'A wearable keyboard for smartwatches (by Microsoft)', false],
   ['WatchMore', 'A wearable second screen for your Apple Watch', false],
   ['StubHub for GrubHub', 'Flip your delivery', false],
-  ['Auf', "Disables your phone's display and blocks all incoming calls and messages", false],
+  ['Auf', "Disables your phone's display and blocks all incoming messages", false],
   ['Monetize.me', 'Share your $cashtag, BTC address, PayPal and more', false],
   ['CrowdTaker', 'Aggregates reactions and informs you of your opinion on the news', false],
   ['Cannt', 'Generates ironclad last-minute excuses to get out of plans', false],
@@ -144,6 +144,9 @@ var stuff = [
   shuffle(stuff);
   shuffle(stuff); // For good measure
 
+  // Add in a plug :)
+  stuff.splice(8, 0, ['ReadMe.io', 'Beautiful Documentation Made Easy', 'readme-2']);
+
   var i = 0;
   var next = stuff[i];
   $('.item.current h3').text(next[0]);
@@ -165,9 +168,11 @@ var stuff = [
     var real = next[2];
     var correct = $(this).attr('guess') == (real ? 'real' : 'fake');
 
-    total++;
-    if(correct) score++;
-    updateScore();
+    if(real != 'readme-2') {
+      total++;
+      if(correct) score++;
+      updateScore();
+    }
 
     i++;
 
@@ -187,8 +192,12 @@ var stuff = [
     $('.item.next').addClass('hide');
 
     $('.item.current').addClass('next').removeClass('current');
-    $('.right').removeClass('yes no');
-    $('.right').addClass(correct ? 'yes' : 'no');
+    $('.right').removeClass('yes no readme');
+    if(real == 'readme-2') {
+      $('.right').addClass('readme');
+    } else {
+      $('.right').addClass(correct ? 'yes' : 'no');
+    }
 
     var text = '';
     if(correct) {
@@ -203,6 +212,10 @@ var stuff = [
       } else {
         text = 'Nope, not real&hellip; yet!';
       }
+    }
+
+    if(real == 'readme-2') {
+      text = 'Okay, shameless plug&hellip; But <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">check it out</a>!';
     }
 
     $('.score h4').html(text);
