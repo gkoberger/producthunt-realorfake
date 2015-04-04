@@ -136,7 +136,7 @@ var stuff = [
   shuffle(stuff); // Becuase why not?
 
   // Add in a plug :)
-  stuff.splice(8, 0, ['ReadMe.io', 'Beautiful Documentation Made Easy', 'readme-2']);
+  stuff.splice(7, 0, ['ReadMe.io', 'Beautiful Documentation Made Easy', 'readme-2']);
 
   var i = 0;
   var next = stuff[i];
