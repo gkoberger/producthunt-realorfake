@@ -10,22 +10,79 @@ green = #5e9833
 body
   background-color #fff
 
-.container
-  max-width 1200px
-  margin auto
-  padding 0 40px
-
-.panel
+section
+  width 50%
   position relative
+  float left
   overflow hidden
+  &.right
+    background-color orange
+    .ph-thumb
+      display none
+    .ph
+      color orange
+    &.yes, &.no
+      .ph
+        padding-top 17px
+      .ph-quote
+        display none
+      .ph-thumb
+        transition transform 0.3s ease-out
+        transform rotate(0deg)
+        display block
+    &.yes
+      background-color green
+      .ph
+        color green
+    &.no
+      background-color red
+      .ph
+        color red
+      .ph-thumb
+        transform rotate(180deg)
+
+.ph
+  width 80px
+  height 80px
+  background-color orange
+  border-radius 100px
+  margin auto
+  font-weight bold
+  padding-top 25px
+  font-size 38px
+  color #fff
+  text-align center
+  .right &
+    background-color #fff
+    font-size 90px
+    .ph-thumb
+      font-size 46px
+
+.items
+  position relative
+  height 140px
 
 .item
-  transition transform 0.5s ease-out
+  text-align center
+  transition 0.5s ease-out
   position absolute
-  top 0
   width 100%
-  &.drop
-    transform translateY(100%)
+  top 0
+  left 0
+  .left &
+    .container
+      transition all 0.2s ease-out 0.3s
+      transform scale(0.8)
+      opacity 0
+    &.fadein .container
+      transform scale(1)
+      opacity 1
+  &.hide
+    transition opacity 0.2s ease-out
+    opacity 0
+    .container
+      transition all 0.2s ease-out
+      transform scale(0.8)
   h3
     padding-top 50px
     font-size 50px
@@ -38,53 +95,68 @@ body
     font-weight light
     color #BBB
 
-.button
-  position absolute
-  right 0
-  top 0
-  background-color #CCC
-  padding 50px
-  z-index 1000
+.item.next
+  animation bounce 0.9s ease-out forwards
 
+@keyframes bounce
+  0%
+    transform translateX(0%)
+  70%
+    transform translateX(105%)
+  90%
+    transform translateX(98%)
+  100%
+    transform translateX(100%)
 
-header
-  height 180px
-  padding-top 40px
-  .ph
-    width 80px
-    height 80px
-    background-color orange
-    border-radius 100px
-    margin auto
-    font-weight bold
-    padding-top 25px
-    font-size 38px
-    color #fff
-    text-align center
-
-.panel.bottom
-  height 180px
-  position absolute
-  bottom 0
-  width 100%
-  background-color orange
-  .container
-    height 180px
-    transition opacity 0.3s ease-out
-    &.fade
-      opacity 0
+.right
   .item
-    .container-parent
-      background-color red
-    &.correct
-      .container-parent
-        background-color green
     h3
       color #fff
     p
-      color rgba(#fff, 0.7)
+      color rgba(#fff, 0.5)
+  .item
+    left -100%
+
+.center
+  height 350px
+  top 50%
+  margin-top -250px
+  width 100%
+  position absolute
+
+.buttons
+  text-align center
+  margin-top 40px
+  .button
+    background-color #eee
+    margin 0 10px
+    padding 20px 50px
+    border-radius 4px
+    font-size 30px
+    display inline-block
+    cursor pointer
+    color #666
+    &:hover
+      cursor pointer
+      background-color #d9d9d9
+      color #333
+    &:active
+      background-color darken(orange, 10%)
+      box-shadow 0 3px 3px rgba(0,0,0,0.2) inset
+      color #fff
+
+.quote-parent
+  position relative
 
 .quote
+  position absolute
+  top 0
+  left 0
+  width 100%
+  &.hide
+    opacity 0
+    transition all 0.2s ease-out
+    transform scale(0.8)
   h3
     text-align center
     font-weight 300
@@ -94,9 +166,12 @@ header
     margin-bottom 15px
   p
     text-align center
-    font-size 23px
     margin 0
     color #fff
     font-style italic
     font-family garamond
-
+    max-width 480px
+    margin auto
+    font-size 36px
+    line-height 1.3em
+    margin-top 20px

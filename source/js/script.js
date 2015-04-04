@@ -1,32 +1,44 @@
+var stuff = [
+  ['Dwyneed', 'SMS a human who will talk you out of purchases', false],
+  ['Watercoolr', 'Pop culture updates to keep up with your coworkers', false],
+  ['Pinebox', 'Birchbox for morticians', false],
+  ['Worn On TV', 'Buy clothing worn in your favorite TV shows', true],
+  ['Newscombinator', 'Like Google-News, but for hackers', true],
+  ['Meer-katalytics', 'Complete analytics for all Meerkats', true],
+];
+
 (function() {
   $(window).on('resize', function() {
-    $('.top.panel, .top .item').height($(window).height() - 360)
-    $('.bottom .item').height($(window).height() - 360)
-    $('.bottom .item').css('top', ($(window).height() - 360) * -1)
+    $('section').height($(window).height());
   }).trigger('resize');
 
+  var next = stuff[Math.floor(Math.random() * stuff.length)];
+  $('.item.current h3').text(next[0]);
+  $('.item.current p').text(next[1]);
+
   $('.button').click(function() {
-    $('.bottom .item.drop .container').addClass('fade');
+    var correct = $(this).attr('guess') == (next[2] ? 'real' : 'fake');
 
-    if(Math.random() > 0.5) {
-      $('.bottom .item.current').addClass('correct');
-    }
+    next = stuff[Math.floor(Math.random() * stuff.length)];
 
-    $('.item.current').addClass('drop');
-    $('.item').removeClass('current');
+    $('.quote').addClass('hide');
+    $('.item.next').addClass('hide');
 
-    setTimeout(function() {
-      var $top = $('#demo').clone().attr('id', null);
-      $('.top.panel').append($top.addClass('current'));
+    $('.item.current').addClass('next').removeClass('current');
+    $('.right').removeClass('yes no');
+    $('.right').addClass(correct ? 'yes' : 'no');
 
-      var $bottom = $('#demo').clone().attr('id', null);
-      $('.bottom.panel').append($bottom.addClass('current'));
+    var clone = function(side) {
+      var $el = $('#demo').clone().attr('id', null);
+      $('.' + side + ' .items').append($el.addClass('current'));
+      $('h3', $el).text(next[0]);
+      $('p', $el).text(next[1]);
+    };
 
-      $(window).trigger('resize');
-      $('.bottom .item.current').show();
-      $('.top .item.current').fadeIn();
-    }, 400);
+    clone('left');
+    clone('right');
 
-    return false;
+    $('.item.current').show();
+    $('.left .item.current').addClass('fadein');
   });
 })();

@@ -1,29 +1,33 @@
 extends layout
 
 block content
-  header
-    .container
+
+  section.left
+    .center
       .ph P
-  section.panel.top
-    .item.current
-      .container-parent
-        .container
-          h3 Design Hunt
-          p Best products, apps, and inspirations for creatives.
-    a.button() GO!
-  section.panel.bottom
-    .quote
-      h3 &mdash;&nbsp;&nbsp; The Silicon Valley Rule &nbsp;&nbsp;&mdash;
-      p No idea is so crazy that someone, somewhere isn't raising money for it
-    .item.current
-      .container-parent
-        .container
-          h3 Design Hunt
-          p Best products, apps, and inspirations for creatives.
-
+      .items
+        .item.current.fadein
+          .container
+            h3
+            p
+      .buttons
+        a.button(guess='real') Real
+        a.button(guess='fake') Fake
+  section.right
+    .center
+      .ph
+        .ph-quote &rdquo;
+        .ph-thumb.fa.fa-thumbs-up
+      .quote-parent
+        .quote
+          h3 &mdash;&nbsp;&nbsp; The Silicon Valley Rule &nbsp;&nbsp;&mdash;
+          p No idea is so crazy that someone, somewhere hasn't built it already.
+      .items
+        .item.current
+          .container
+            h3
+            p
   #demo.item(style="display: none;")
-    .container-parent
-      .container
-        h3 Design Hunt
-        p Best products, apps, and inspirations for creatives.
-
+    .container
+      h3
+      p
