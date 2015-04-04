@@ -1,6 +1,6 @@
 var stuff = [
   ['Dwyneed', 'SMS a human who will talk you out of purchases', false],
-  ['Watercoolr', 'Pop culture updates to keep up with your coworkers', false],
+  ['Watercoolr', 'Pop culture updates to keep up with your informed coworkers', false],
   ['Pinebox', 'Birchbox for morticians', false],
   ["You're Probably Not Dying",  'Chrome plugin that redirects WebMD traffic to /r/aww', false],
   ["Morekat", 'Hire watchers to up your Meerkat statistics', false],
@@ -9,7 +9,7 @@ var stuff = [
   ['Keuritos', 'Keurig for burrito filling', false],
   ['Streamless', 'On-demand DVD delivery', false],
   ['Thrones Scoreboard', 'Real-time Game of Thrones updates pushed to Apple Watch', false],
-  ['Pettr', 'Connects animals with lonely people to pet them', false],
+  ['Pettr', 'Connects lonely animals with people to pet them', false],
   ['ClutterCasher', 'Storage service that eBays things you haven’t asked for in awhile', false],
   ['InCase by Amazon', 'Recommendation engine sends you things it predicts you want', false],
   ['SweepUnder', 'Service to hide your apartment clutter on short notice', false],
@@ -24,17 +24,17 @@ var stuff = [
   ['Auf', "Disables your phone's display and blocks all incoming messages", false],
   ['Monetize.me', 'Share your $cashtag, BTC address, PayPal and more', false],
   ['CrowdTaker', 'Aggregates reactions and informs you of your opinion on the news', false],
-  ['Cannt', 'Generates ironclad last-minute excuses to get out of plans', false],
+  ['Cannt', 'Generates last-minute excuses to get out of plans', false],
   ['Stüul',  'A tall, elegant chair for people with standing desks', false],
   ['Slock', 'Like Slack, but secure', false],
-  ['Credditor', 'Adds source to comments when your content is posted on Reddit', false],
+  ['Credditor', 'Automatically post source in comments when your content is posted on Reddit', false],
   ['Crammr', 'Beautiful tool for automating adaptation of your brand messaging', false],
   ['APPS by TOMS', 'For every app you buy, one is sent to a village', false],
   ['BaeWatch', 'Sends a notification whenever your partner likes their ex’s selfie', false],
-  ['Synonymo.us', 'Rephrases your app idea as either "Uber for X"', false],
+  ['Synonymo.us', 'Rephrases your app idea as "Uber for X" or "Tinder for Y"', false],
   ['FlaskRabbit', 'On-demand covert liquor delivery', false],
   ['DeListicle', ' Translate listicles to normal long-form essays', false],
-  ['Slacker', 'Slack plugin that auto-replies "brb" during work hours', false],
+  ['Slacker', 'Slack plugin that auto-replies "brb phone" during work hours', false],
   ['Snapkat', 'Tweet live video, but like, only for teens and marketers', false],
   ['WeWorkTomorrow', 'A coworking space with no desks', false],
   ['RantStormer', 'Copy and paste a blogpost to chop it into numbered tweets', false],
@@ -58,14 +58,12 @@ var stuff = [
   ['DeskNest', 'A rollable nap pad that fits under your desk', false],
  
 
-  ['Worn On TV', 'Buy clothing worn in your favorite TV shows', 'worn-on-tv'],
   ['Newscombinator', 'Like Google-News, but for hackers', 'newscombinator'],
   ['Meer-katalytics', 'Complete analytics for all Meerkats', 'meer-katalytics'],
   ['4 Minute Workout', "The world's fastest full body workout in just 4 minutes", '4-minute-workout'],
   ['Pug A Day', 'Send a friend 100 days of Pug pictures', 'pug-a-day'],
   ['Pick Up, Knock Down', 'Get a compliment and an insult from a stranger', 'pick-me-up-knock-me-down'],
   ['TreadDesk', 'Walk while you work', 'treaddesk'],
-  ['Easy Ten', 'Learn Any Language with ten words a day.', 'easy-ten'],
   ['Wrte.io', 'Email with a paywall. Charge for reading your email.', 'wrte-io'],
   ['DystopiaTracker', 'Explore predictions about the future and their realizations', 'dystopiatracker'],
   ['alibi.', 'Verify your story with passive geo tracking and Touch ID', 'alibi-2'],
@@ -74,15 +72,12 @@ var stuff = [
   ['Slater', 'Schedule your Slack messages now, post them later', 'slater-by-convergely'],
   ['Blindfold', 'Siri for sex. Your digital foreplay assistant.', 'blindfold'],
   ['Flinch', 'Staring contest with strangers', 'flinch'],
-  ['Shitty Listings', 'A list of distressed properties for house flippers.', 'shitty-listings'],
   ['Ship Snow, Yo', 'We Ship Snow To Anyone in the US', 'ship-snow-yo'],
   ['Hoffice', "Cowork at someone's home", 'hoffice'],
-  ['Personable.io', 'Personalization-as-a-Service API', 'personable-io'],
   ['Hotels By Day', 'Experience a great hotel by day without paying for the night', 'hotels-by-day'],
   ['Gutsy', 'Find out what your friends truly think of you', 'gutsy'],
   ['Wevorce', 'Streamline the divorce process online', 'wevorce'],
   ['Rise', 'All-you-can-fly, private air travel membership', 'rise-5'],
-  ['CannabisMD', 'Medical marijuana card evaluations on-demand', 'cannabismd-by-medow'],
   ['Dreaming With Jeff', 'Sleep better with the sound of Jeff Bridges', 'dreaming-with-jeff'],
   ['Am I Going Down?', 'Analyzes the chance of your flight crashing.', 'am-i-going-down'],
   ['Toothpick', "Calculate your tip based on the server's gender", 'toothpick'],
@@ -94,10 +89,8 @@ var stuff = [
   ['Be My Eyes', 'Lend your eyes to the blind', 'be-my-eyes-2'],
   ['Ship Your Enemies Glitter', 'Send glitter to the people that deserve it', 'ship-your-enemies-glitter'],
   ['Love Actualized', 'App for falling in love', 'love-actualized'],
-  ['Laterbox', 'A place to store your thoughts so you can stay focussed.', 'laterbox'],
   ['Vibease', "World's first wearable smart vibrator", 'vibease'],
   ['Hotel My Phone', "Borrow a friend's phone & use it as your own.", 'hotel-my-phone'],
-  ['Selfit ', 'Take your selfies to the next level!', 'selfit'],
   ['Listen to Twitter', 'Convert the sentiment of any topic into a unique melody', 'listen-to-twitter'],
   ['Pay with a Tweet', 'Sell your product for the price of a tweet', 'pay-with-a-tweet'],
   ['Blade', 'Helicopter ride sharing', 'blade'],
@@ -114,12 +107,9 @@ var stuff = [
   ['Bobler', 'Record 36 sec podcasts', 'bobler'],
   ['Stamp Yo Face!', 'Get your own custom-made selfie stamp', 'stamp-yo-face'],
   ['Yo B*tch', 'Yo app by Aaron Paul', 'yo-b-tch'],
-  ['Recho', 'Record sounds and tie them to the place they were recorded', 'recho'],
   ['No CAPTCHA reCAPTCHA', "Update to CAPTCHA just asks if you're robot", 'no-captcha-recaptcha'],
-  ['Status', "See what your friends are up to w/ automatic status updates", 'status'],
   ['Plague', 'Spread content like a virus', 'plague'],
   ['Endangered Sounds Museum', 'Nostalgic sounds from the past', 'endangered-sounds-museum'],
-  ['Tummis', 'Tinder for people to follow on Twitter', 'tummis'],
   ['Selfie Dolls', 'Have a selfie doll made in your likeness', 'selfie-dolls'],
   ['Pushh', 'Keep track of your fitness selfies', 'pushh'],
   ['Emojiary', 'Tap into your feelings - using emoji', 'emojiary'],
@@ -133,6 +123,7 @@ var stuff = [
   ['Geocities-izer', 'Make any site look like a throwback Geocities site', 'geocities-izer-2'],
   ['Somebody', 'Send a message delivered verbally by a stranger', 'somebody'],
   ['Mermur', 'Anonymous text messages. No replies.', 'mermur'],
+  ['Lukewarm Emailer', 'Build a list of people on Twitter, reach out w/ a cold email', 'lukewarm-emailer'],
 ];
 
 (function() {
@@ -141,8 +132,8 @@ var stuff = [
   }).trigger('resize');
 
   shuffle(stuff);
-  shuffle(stuff);
   shuffle(stuff); // For good measure
+  shuffle(stuff); // Becuase why not?
 
   // Add in a plug :)
   stuff.splice(8, 0, ['ReadMe.io', 'Beautiful Documentation Made Easy', 'readme-2']);
