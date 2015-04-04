@@ -16,17 +16,55 @@ var stuff = [
   $('.item.current h3').text(next[0]);
   $('.item.current p').text(next[1]);
 
+  var score = (window.localStorage['score'] || 0)*1;
+  var total = (window.localStorage['total'] || 0)*1;
+
+  console.log(total);
+
+
+  function updateScore() {
+    $('.update-score').text(score);
+    $('.update-total').text(total);
+    $('.update-percent').text(Math.floor((score / total) * 100) + "%");
+
+    window.localStorage['total'] = total;
+    window.localStorage['score'] = score;
+  };
+
   $('.button').click(function() {
-    var correct = $(this).attr('guess') == (next[2] ? 'real' : 'fake');
+    var real = next[2];
+    var correct = $(this).attr('guess') == (real ? 'real' : 'fake');
+
+    total++;
+    if(correct) score++;
+    updateScore();
 
     next = stuff[Math.floor(Math.random() * stuff.length)];
 
     $('.quote').addClass('hide');
+    $('.score').addClass('on');
     $('.item.next').addClass('hide');
 
     $('.item.current').addClass('next').removeClass('current');
     $('.right').removeClass('yes no');
     $('.right').addClass(correct ? 'yes' : 'no');
+
+    var text = '';
+    if(correct) {
+      if(real) {
+        text = 'Yup, this is a real product!';
+      } else {
+        text = 'You spotted the fake!';
+      }
+    } else {
+      if(real) {
+        text = 'Actually, it is real!';
+      } else {
+        text = 'Nope, not real&hellip; yet!';
+      }
+    }
+
+    $('.score h4').html(text);
 
     var clone = function(side) {
       var $el = $('#demo').clone().attr('id', null);

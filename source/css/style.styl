@@ -119,6 +119,28 @@ section
       color rgba(#fff, 0.5)
   .item
     left -100%
+  .score
+    text-align center
+    margin-top 40px
+    font-size 30px
+    pointer-events none
+    opacity 0
+    transition 0.3s ease-out 0.3s
+    &.on
+      opacity 1
+      pointer-events auto
+    h4
+      color rgba(0,0,0,0.3)
+      font-family Roboto
+      font-weight 900
+      margin 0
+    p
+      margin 0
+      color rgba(255,255,255,0.5)
+      margin-top 10px
+      font-size 25px
+      strong
+        color #fff
 
 .center
   height 350px
