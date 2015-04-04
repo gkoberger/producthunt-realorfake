@@ -128,6 +128,11 @@ var stuff = [
   ['Capsule', 'Text the future', 'capsule'],
   ['Companion', 'Walking home alone is dangerous. Stop doing it alone.', 'companion'],
   ['Push for Pizza', 'The easiest way to order pizza. EVER.', 'push-for-pizza'],
+  ['Startup Legitimizer', 'Make your startup appear super legit', 'startup-legitimizer-2'],
+  ['Shady URL', "Don't just shorten your URL, make it suspicious and frighten", 'shady-url'],
+  ['Geocities-izer', 'Make any site look like a throwback Geocities site', 'geocities-izer-2'],
+  ['Somebody', 'Send a message delivered verbally by a stranger', 'somebody'],
+  ['Mermur', 'Anonymous text messages. No replies.', 'mermur'],
 ];
 
 (function() {
