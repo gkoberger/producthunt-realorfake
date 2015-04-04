@@ -9,7 +9,7 @@ var stuff = [
   ['Keuritos', 'Keurig for burrito filling', false],
   ['Streamless', 'On-demand DVD delivery', false],
   ['Thrones Scoreboard', 'Real-time Game of Thrones updates pushed to Apple Watch', false],
-  ['Pettr', 'Connects lonely animals with people who just want to pet a dog', false],
+  ['Pettr', 'Connects animals with lonely people to pet them', false],
   ['ClutterCasher', 'Storage service that eBays things you haven’t asked for in awhile', false],
   ['InCase by Amazon', 'Recommendation engine sends you things it predicts you want', false],
   ['SweepUnder', 'Service to hide your apartment clutter on short notice', false],
@@ -22,12 +22,12 @@ var stuff = [
   ['WatchMore', 'A wearable second screen for your Apple Watch', false],
   ['StubHub for GrubHub', 'Flip your delivery', false],
   ['Auf', "Disables your phone's display and blocks all incoming calls and messages", false],
-  ['Monetize.me', 'Simple space to share your $cashtag, BTC wallet address and more', false],
+  ['Monetize.me', 'Share your $cashtag, BTC address, PayPal and more', false],
   ['CrowdTaker', 'Aggregates reactions and informs you of your opinion on the news', false],
   ['Cannt', 'Generates ironclad last-minute excuses to get out of plans', false],
   ['Stüul',  'A tall, elegant chair for people with standing desks', false],
   ['Slock', 'Like Slack, but secure', false],
-  ['Credditor', 'Adds source to comments whenever a redditor reposts your content', false],
+  ['Credditor', 'Adds source to comments when your content is posted on Reddit', false],
   ['Crammr', 'Beautiful tool for automating adaptation of your brand messaging', false],
   ['APPS by TOMS', 'For every app you buy, one is sent to a village', false],
   ['BaeWatch', 'Sends a notification whenever your partner likes their ex’s selfie', false],
@@ -135,7 +135,12 @@ var stuff = [
     $('section').height($(window).height());
   }).trigger('resize');
 
-  var next = stuff[Math.floor(Math.random() * stuff.length)];
+  shuffle(stuff);
+  shuffle(stuff);
+  shuffle(stuff); // For good measure
+
+  var i = 0;
+  var next = stuff[i];
   $('.item.current h3').text(next[0]);
   $('.item.current p').text(next[1]);
 
@@ -159,8 +164,11 @@ var stuff = [
     if(correct) score++;
     updateScore();
 
-    i = Math.floor(Math.random() * stuff.length);
+    i++;
+
+    if(i >= stuff.length) i = 0;
     next = stuff[i];
+
     if(!next) {
       console.log('i', i);
     }
@@ -207,4 +215,23 @@ var stuff = [
     $('.item.current').show();
     $('.left .item.current').addClass('fadein');
   });
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
 })();
