@@ -2,9 +2,9 @@ var stuff = [
   ['Dwyneed', 'SMS a human who will talk you out of purchases', false],
   ['Watercoolr', 'Pop culture updates to keep up with your coworkers', false],
   ['Pinebox', 'Birchbox for morticians', false],
-  ['Worn On TV', 'Buy clothing worn in your favorite TV shows', true],
-  ['Newscombinator', 'Like Google-News, but for hackers', true],
-  ['Meer-katalytics', 'Complete analytics for all Meerkats', true],
+  ['Worn On TV', 'Buy clothing worn in your favorite TV shows', 'worn-on-tv'],
+  ['Newscombinator', 'Like Google-News, but for hackers', 'newscombinator'],
+  ['Meer-katalytics', 'Complete analytics for all Meerkats', 'meer-katalytics'],
 ];
 
 (function() {
@@ -18,9 +18,6 @@ var stuff = [
 
   var score = (window.localStorage['score'] || 0)*1;
   var total = (window.localStorage['total'] || 0)*1;
-
-  console.log(total);
-
 
   function updateScore() {
     $('.update-score').text(score);
@@ -42,6 +39,10 @@ var stuff = [
     next = stuff[Math.floor(Math.random() * stuff.length)];
 
     $('.quote').addClass('hide');
+    setTimeout(function() {
+      $('.quote').remove();
+    }, 1000);
+
     $('.score').addClass('on');
     $('.item.next').addClass('hide');
 
@@ -52,13 +53,13 @@ var stuff = [
     var text = '';
     if(correct) {
       if(real) {
-        text = 'Yup, this is a real product!';
+        text = 'Yup, this is <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">is a real product</a>!';
       } else {
         text = 'You spotted the fake!';
       }
     } else {
       if(real) {
-        text = 'Actually, it is real!';
+        text = 'Actually, it <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">is real</a>!';
       } else {
         text = 'Nope, not real&hellip; yet!';
       }
