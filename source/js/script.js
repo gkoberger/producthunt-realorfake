@@ -28,7 +28,7 @@ var stuff = [
   ['Stüul',  'A tall, elegant chair for people with standing desks', false],
   ['Slock', 'Like Slack, but secure', false],
   ['Credditor', 'Automatically post source in comments when your content is posted on Reddit', false],
-  ['Crammr', 'Beautiful tool for automating adaptation of your brand messaging', false],
+  ['Crammr', 'Beautiful tool for automating adoption of your brand messaging', false],
   ['APPS by TOMS', 'For every app you buy, one is sent to a village', false],
   ['BaeWatch', 'Sends a notification whenever your partner likes their ex’s selfie', false],
   ['Synonymo.us', 'Rephrases your app idea as "Uber for X" or "Tinder for Y"', false],
