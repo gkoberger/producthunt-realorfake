@@ -1,18 +1,102 @@
 @import nib
 
-greyish = #eee
+orange = #da552f
+red = #c71e21
+green = #5e9833
+
+*
+  box-sizing border-box
 
 body
-  background-color greyish
+  background-color #fff
 
+.container
+  max-width 1200px
+  margin auto
+  padding 0 40px
 
-.big-gulp
-  text-align center
-  img
-    display block
-    height 250px
-    margin 30px auto 20px
-  strong
-    display block
+.panel
+  position relative
+  overflow hidden
+
+.item
+  transition transform 0.5s ease-out
+  position absolute
+  top 0
+  width 100%
+  &.drop
+    transform translateY(100%)
+  h3
+    padding-top 50px
+    font-size 50px
+    margin 0
     margin-bottom 10px
+    color #555
+  p
+    margin 0
+    font-size 20px
+    font-weight light
+    color #BBB
+
+.button
+  position absolute
+  right 0
+  top 0
+  background-color #CCC
+  padding 50px
+  z-index 1000
+
+
+header
+  height 180px
+  padding-top 40px
+  .ph
+    width 80px
+    height 80px
+    background-color orange
+    border-radius 100px
+    margin auto
+    font-weight bold
+    padding-top 25px
+    font-size 38px
+    color #fff
+    text-align center
+
+.panel.bottom
+  height 180px
+  position absolute
+  bottom 0
+  width 100%
+  background-color orange
+  .container
+    height 180px
+    transition opacity 0.3s ease-out
+    &.fade
+      opacity 0
+  .item
+    .container-parent
+      background-color red
+    &.correct
+      .container-parent
+        background-color green
+    h3
+      color #fff
+    p
+      color rgba(#fff, 0.7)
+
+.quote
+  h3
+    text-align center
+    font-weight 300
+    color rgba(255,255,255,0.5)
+    text-transform uppercase
+    margin-top 60px
+    margin-bottom 15px
+  p
+    text-align center
+    font-size 23px
+    margin 0
+    color #fff
+    font-style italic
+    font-family garamond
 
