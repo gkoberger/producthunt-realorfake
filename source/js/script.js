@@ -53,7 +53,7 @@ var stuff = [
     var text = '';
     if(correct) {
       if(real) {
-        text = 'Yup, this is <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">is a real product</a>!';
+        text = 'Yup, this is <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">a real product</a>!';
       } else {
         text = 'You spotted the fake!';
       }
