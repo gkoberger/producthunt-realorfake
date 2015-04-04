@@ -183,3 +183,32 @@ section
     margin-top 20px
     font-family 'Droid Serif', serif
     font-weight 400
+
+.byline
+  position absolute
+  bottom 0
+  text-align left
+  left 0
+  padding 15px 20px
+  color #AAA
+  font-family Roboto
+  font-size 14px
+  line-height 1.5em
+  .right &
+    text-align right
+    left auto
+    right 0
+    color rgba(#fff,0.5)
+  p
+    margin 0
+  a
+    color #888
+    text-decoration none
+    font-weight bold
+    &:hover
+      color orange
+      text-decoration none
+    .right &
+      color rgba(#fff,0.6)
+      &:hover
+        color #fff
