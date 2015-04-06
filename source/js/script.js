@@ -56,7 +56,11 @@ var stuff = [
   ['Swerpes', 'An unobtrusive, iOS compatible STD testing kit for Tinder users', false],
   ['TieLocker','Automatically sends a tie every month directly to your storage space', false],
   ['DeskNest', 'A rollable nap pad that fits under your desk', false],
- 
+  ['Coverjudge', 'Tinder for books', false],
+  ['Civickstarter', 'Kickstarter for public works', false],
+  ['Fit Good', 'Glassdor-style descriptions of how employees dress', false],
+  ['Rockbox', 'Five pet rocks delivered to your door every month', false],
+  ['BragTagg', 'Adds "Founder & CEO" to your Twitter bio when you have an idea', false],
 
   ['Newscombinator', 'Like Google-News, but for hackers', 'newscombinator'],
   ['Meer-katalytics', 'Complete analytics for all Meerkats', 'meer-katalytics'],
