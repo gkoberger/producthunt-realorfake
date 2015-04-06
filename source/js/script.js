@@ -131,6 +131,10 @@ var stuff = [
     $('section').height($(window).height());
   }).trigger('resize');
 
+  if(isMobile.any) {
+    $('body').addClass('mobile')
+  }
+
   shuffle(stuff);
   shuffle(stuff); // For good measure
   shuffle(stuff); // Becuase why not?
@@ -155,9 +159,26 @@ var stuff = [
     window.localStorage['score'] = score;
   };
 
+  $('.btn-next, .button').on({
+    'touchstart' : function(){
+      $(this).addClass('active');
+    },
+    'touchend': function() {
+      $(this).removeClass('active');
+    }
+  });
+
   $('.button').click(function() {
     var real = next[2];
     var correct = $(this).attr('guess') == (real ? 'real' : 'fake');
+
+    if(isMobile.any) {
+      $('body').addClass('answer');
+      $('.btn-next').click(function(e) {
+        $('body').removeClass('answer');
+        return false;
+      });
+    }
 
     if(real != 'readme-2') {
       total++;
@@ -206,7 +227,7 @@ var stuff = [
     }
 
     if(real == 'readme-2') {
-      text = 'Okay, shameless plug&hellip; But <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">check it out</a>!';
+      text = 'Okay, shameless plug&hellip; <span class="mobile-break">But <a href="http://www.producthunt.com/posts/'+real+'" target="_blank">check it out</a>!</span>';
     }
 
     $('.score h4').html(text);

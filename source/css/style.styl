@@ -15,6 +15,8 @@ section
   position relative
   float left
   overflow hidden
+  .mobile &
+    width 100%
   &.right
     background-color orange
     .ph-thumb, .ph-readme
@@ -26,14 +28,20 @@ section
       .ph
         padding-top 17px
         color #1a8fb4
+        .mobile &
+          padding-top 11px
       .ph-quote, .ph-thumb
         display none
       .ph-readme
         font-size 46px
         display block
+        .mobile &
+          font-size 31px
     &.yes, &.no
       .ph
         padding-top 17px
+        .mobile &
+          padding-top 11px
       .ph-quote
         display none
       .ph-thumb
@@ -62,16 +70,25 @@ section
   font-size 38px
   color #fff
   text-align center
+  .mobile &
+    width 50px
+    height 50px
+    font-size 27px
+    padding-top 11px
   .right &
     background-color #fff
     font-size 90px
     .ph-thumb
       font-size 46px
+      .mobile &
+        font-size 31px
 
 .items
   transform translateX(0%)
   position relative
   height 140px
+  .mobile &
+    height auto
 
 .item
   text-align center
@@ -80,6 +97,8 @@ section
   width 100%
   top 0
   left 0
+  .mobile &
+    position relative
   .left &
     .container
       transition all 0.2s ease-out 0.3s
@@ -102,15 +121,48 @@ section
     color #555
     font-family 'Roboto', sans-serif
     font-weight 900
+    .mobile &
+      font-size 24px
+      margin-bottom 7px
   p
     margin 0
     font-size 20px
     font-weight 300
     color #BBB
     font-family 'Roboto Condensed', sans-serif
+    .mobile &
+      padding 0 30px
+      line-height 1.5em
+      height 62px
 
 .item.next
   animation bounce 0.9s ease-out forwards
+  .mobile &
+    animation 0 none
+  .mobile .left &
+    display none
+
+.btn-next
+  margin 40px 30px 40px
+  padding 16px 0 15px
+  background-color rgba(0,0,0,0.2)
+  border-radius 5px
+  text-decoration none
+  color rgba(#fff, 0.8)
+  font-size 22px
+  display none
+  .mobile &
+    display block
+  &:active, &.active
+    box-shadow 0 3px 3px rgba(0,0,0,0.2) inset
+    color #fff
+    background-color rgba(0,0,0,0.3)
+
+.right .item.current, .right .item.hide
+  .mobile &
+    display none
+    height 0
+    overflow hidden
 
 @keyframes bounce
   0%
@@ -122,7 +174,15 @@ section
   100%
     transform translateX(100%)
 
+.left
+  .mobile.answer &
+    display none
+
 .right
+  .mobile &
+    display none
+  .mobile.answer &
+    display block
   .item
     h3
       color #fff
@@ -130,6 +190,8 @@ section
       color rgba(#fff, 0.5)
   .item
     left -100%
+    .mobile &
+      left 0
   .score
     text-align center
     margin-top 35px
@@ -145,6 +207,10 @@ section
       font-family Roboto
       font-weight 900
       margin 0
+      .mobile &
+        font-size 22px
+      .mobile .readme&
+        font-size 16px
       a
         color rgba(0,0,0,0.5)
         text-decoration none
@@ -157,6 +223,10 @@ section
       color rgba(255,255,255,0.5)
       margin-top 15px
       font-size 25px
+      .mobile &
+        font-size 15px
+        margin-top 15px
+
       strong
         color #fff
 
@@ -166,6 +236,10 @@ section
   margin-top -210px
   width 100%
   position absolute
+  .mobile &
+    height auto
+    margin-top 0
+    top 50px
 
 .buttons
   text-align center
@@ -174,6 +248,10 @@ section
     padding 0 10px
     color #CCC
     font-family Roboto
+    .mobile &
+      display none
+  .mobile &
+    padding 0 30px
   .button
     background-color #eee
     margin 0 10px
@@ -190,10 +268,17 @@ section
       cursor pointer
       background-color #d9d9d9
       color #333
-    &:active
+    &:active, &.active
       background-color darken(orange, 10%)
       box-shadow 0 3px 3px rgba(0,0,0,0.2) inset
       color #fff
+    .mobile &
+      width 46%
+      padding 14px 30px
+      margin-bottom 7px
+      font-size 18px
+      float left
+      margin 0 2%
 
 .quote-parent
   position relative

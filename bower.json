@@ -20,7 +20,8 @@
     "fontawesome": "~4.1.0"
   },
   "dependencies": {
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "isMobile": "~0.3.6"
   },
   "resolutions": {
     "jquery": ">= 1.9.0"
