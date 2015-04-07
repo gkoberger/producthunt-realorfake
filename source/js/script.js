@@ -61,6 +61,10 @@ var stuff = [
   ['Fit Good', 'Glassdor-style descriptions of how employees dress', false],
   ['Rockbox', 'Five pet rocks delivered to your door every month', false],
   ['BragTagg', 'Adds "Founder & CEO" to your Twitter bio when you have an idea', false],
+  ['Standup', 'Teleconferencing with unchangeable time limit to kill timewasting', false],
+  ['Triage Surge', 'Uber for ambulances', false],
+  ['Ship Your Enemies Bees', 'Ship Your Enemies Glitter for sociopaths', false],
+  ['LinkedInstagram', 'Suite of fun filters tools for professional pictures', false],
 
   ['Newscombinator', 'Like Google-News, but for hackers', 'newscombinator'],
   ['Meer-katalytics', 'Complete analytics for all Meerkats', 'meer-katalytics'],
